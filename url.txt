@@ -16,3 +16,9 @@ https://npm.taobao.org/
 
 
 
+
+http://ionicframework.com/docs/v2/api/components/item/Item/
+http://liuzhuang.tech/2016/11/24/Ionic2-Study-%E4%B8%89/
+
+
+
