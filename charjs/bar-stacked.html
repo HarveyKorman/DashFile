@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Stacked Bar Chart</title>
+    <script src="./jquery.min.js"></script>
+    <script src="./dist/Chart.bundle.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="width: 75%">
+        <canvas id="canvas"></canvas>
+    </div>
+    <button id="randomizeData">Randomize Data</button>
+    <script>
+        var randomScalingFactor = function() {
+            return Math.round(Math.random() * 100);
+        };
+        var randomColorFactor = function() {
+            return Math.round(Math.random() * 255);
+        };
+
+        var barChartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: 'Dataset 1',
+                backgroundColor: "rgba(220,220,220,0.5)",
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+            }, {
+                label: 'Dataset 2',
+                backgroundColor: "rgba(151,187,205,0.5)",
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+            }, {
+                label: 'Dataset 3',
+                backgroundColor: "rgba(151,187,205,0.5)",
+                borderColor: "rgba(0,0,0,0)",
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+            }]
+
+        };
+        window.onload = function() {
+        	Chart.pluginService.register({
+        		beforeDraw: function() {
+        			this
+        		}
+        	});
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+				    responsive: true,
+				    maintainAspectRatio: true,
+				    legend: {
+				      display: true,
+				      position: "bottom"
+				    },
+				    scales: {
+				      xAxes: [{
+				        stacked: true,
+				        categoryPercentage: 0.8,
+				        gridLines: { 
+				        	drawTicks: false,
+				        	},
+				      }],
+				      yAxes: [{
+				        stacked: true,
+				      }]
+				    },
+				    tooltips: {
+				      display: true,
+				      enabled: true,
+				      mode: 'label',
+				      callbacks: {
+				        label: function(tooltipItem, data) {
+				          let item = tooltipItem;
+				          let datasets = data.datasets[item.datasetIndex].data;
+				          return datasets[item.index];
+				        }
+				      }
+				    },
+                }
+            });
+        };
+
+        $('#randomizeData').click(function() {
+            $.each(barChartData.datasets, function(i, dataset) {
+                dataset.backgroundColor = 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)';
+                dataset.data = [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()];
+
+            });
+            window.myBar.update();
+        });
+    </script>
+</body>
+
+</html>
