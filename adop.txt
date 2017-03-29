@@ -1,0 +1,75 @@
+﻿Hi @sochoa , if you want to run it with Docker Machine, 
+we have quickstart.sh wrapper srcipt http://accenture.github.io/adop-docker-compose/docs/quickstart/
+./quickstart.sh -t local
+If you have up&running Linux server with pre-installed Docker and no need to use Docker Machine,
+in this case you can run http://accenture.github.io/adop-docker-compose/docs/architecture/cli/:
+./adop compose init
+
+As a first step, i would suggest to try out installation of ADOP, 
+check the documentation for it http://accenture.github.io/adop-docker-compose/
+Then in some of our repositories, we have feature requests which
+ you can find by checking Issues section, there would be gree labels like “Help Wanted”, which usually easy to implement
+https://github.com/Accenture?utf8=%E2%9C%93&query=adop
+as an example, please check Java Cartridge which thanks to @deors we have a lot of nice feature 
+requests https://github.com/Accenture/adop-cartridge-java/issues where you can help and contribute
+
+
+./adop compose -m "${MACHINE_NAME}" init
+where $MACHINE_NAME is the name of a local vm you already created with docker-machine
+
+
+ADOP's quickstart and adop shell scripts create a Virtualbox Machine and then, inside this machine, run serveral containers (jekins, gitlab, etc) and interconect them all. What I would like is to run the containers just in my machine without needing to create a VM.
+
+Markos @kramos 7月 17 2016 20:30
+Have you tried the above with machine name = localhost?
+
+Rafael Ríos Saavedra @rafariossaa 7月 17 2016 20:31
+Yes, when I do that I look for Virtualbox and try to create a virtual machine. And that is not what I want, I what to run the containers in my computer not inside a VM in my computer
+(I look = it looks)
+
+Markos @kramos 7月 17 2016 21:31
+Just ./ADOP compose init
+sorry lowercase adop ^
+when I try that it starts trying to pull but I don't have docker installed locally
+
+configuration is invalid - make sure your DOCKER_TLS_VERIFY and DOCKER_CERT_PATH are set correctly.
+You might need to run eval "$(docker-machine env default)"
+
+**************************************************************************************
+To make this permanently, add the following line to /etc/sysctl.conf:
+
+net.ipv4.tcp_mtu_probing=1
+
+I found out that the problem might be in /etc/resolv.conf. I had:
+
+nameserver 10.0.0.10
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+but moving the non-working (yet) 10.0.0.10 nameserver to the bottom fixed it for me I think
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+nameserver 10.0.0.10
+****************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I'm interested in seeing more collaobration over OSS cartrigdes. To my knoweldge the following are out there:
+Java: https://github.com/accenture/adop-cartridge-java
+FlyWay: https://github.com/kramos/adop-cartridge-flyway
+Chef: https://github.com/kramos/adop-cartridge-chef
+Docker: https://github.com/adarrenjackson/adop-cartridge-docker/network
+Dotnet in Docker: https://github.com/kramos/adop-cartridge-aspnet-linux
+Cartridge dev kit: https://github.com/accenture/adop-cartridge-cartridge-dev
+Anyone aware of others? Which ones should exist that don't? Fancy collaborating?
