@@ -56,6 +56,16 @@ nameserver 10.0.0.10
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 http://blog.csdn.net/21cnbao/article/details/56275456
 https://docs.docker.com/docker-for-windows/troubleshoot/#networking-issues
+
+Docker切换国内镜像下载源
+
+https://www.daocloud.io/mirror#accelerator-doc
+github user
+
+docker-machine ssh default 
+sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=http://f7723cd7.m.daocloud.io |g" /var/lib/boot2docker/profile
+exit 
+docker-machine restart default
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 
