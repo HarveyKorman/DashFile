@@ -1,4 +1,37 @@
-﻿Hi @sochoa , if you want to run it with Docker Machine, 
+﻿1. 
+./quickstart -t local -u kimi -p 1qaz2wsx
+2. 
+docker-machine ssh default 
+sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=http://f7723cd7.m.daocloud.io |g" /var/lib/boot2docker/profile
+exit 
+docker-machine restart default
+
+3.set adop to active vm
+eval "$(docker-machine env adop)"  
+
+4.
+./quickstart -t local -u kimi -p 1qaz2wsx
+5.
+Run this command in your shell:
+  source ./conf/env.provider.sh
+  source credentials.generate.sh
+  source env.config.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hi @sochoa , if you want to run it with Docker Machine, 
 we have quickstart.sh wrapper srcipt http://accenture.github.io/adop-docker-compose/docs/quickstart/
 ./quickstart.sh -t local
 If you have up&running Linux server with pre-installed Docker and no need to use Docker Machine,
@@ -67,13 +100,6 @@ sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=http://f7723cd7.m.daoc
 exit 
 docker-machine restart default
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
-
-
-
-
-
-
 
 
 
