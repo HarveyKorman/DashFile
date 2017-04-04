@@ -18,7 +18,8 @@ Run this command in your shell:
   source env.config.sh
 
 
-
+https://my.oschina.net/itblog/blog/547250
+http://blog.jobbole.com/98840/
 
 
 
