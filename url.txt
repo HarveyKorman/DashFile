@@ -1,3 +1,42 @@
+Hi DL Participants,
+
+感谢报名参加此培训，为保证和提升课程质量，现需要您：
+
+1．请您自带笔记本电脑参加本次活动。
+-   自带笔记本电脑，硬件要求：双核i5以上，4G以上内存，50G剩余硬盘空间，Wifi 
+DL: 仅保密间的同事可以在6/13日5:00PM之前，自行联系IT的同事借电脑（请务必尽快通知IT，不然IT可能会来不及配电脑），其他同事请自备电脑，提前搬至培训教室
+
+2．培训中使用了Docker，我们为没有Docker基础的学员准备了课前练习，练习手册如下。课前练习中需要的一款名为“Decker”的软件包含在如下百度网盘链接中。
+    课程中的一些知识与课前练习有关，所以请大家务必完成课前练习。
+
+http://docs.devopshub.cn/docker-training-hols/v3/
+https://pan.baidu.com/s/1miHToZA
+
+3．课前完成下列软件的安装：
+
+Windows系统:
+-          Windows 10 （64位，专业版／企业版，1511 Build 10586 版本以上，建议您直接更新到最新版本）
+o    如果您使用运行在虚拟机中的Windows 10操作系统，请确保您打开了虚拟化嵌套，以便激活其中的Hyper-V功能；请外请确保您可以为虚拟机分配至少8G内存
+-          激活Windows 10中自带的Hyper-V功能
+-          安装 Docker Community Edition for Windows (Stable Channel)
+o    下载地址：https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description
+-          最新版的Git for Windows (2.12 64Bit)
+o    下载地址：https://git-scm.com/
+-          最新版的Visual Studio Code (stable channel)
+o    下载地址：https://code.visualstudio.com/
+-          （可选）Cmder，这是一个在Windows上很好用的命令行工具，可以省去很多使用Windows自带命令行工具带来的麻烦，强烈推荐大家使用
+o    下载地址：http://cmder.net/
+
+Mac系统:
+1.       安装Docker Community Edition (DOCKER CE FOR MAC)
+下载地址：https://www.docker.com/community-edition#download
+2.       安装GIT
+下载地址（Max OS X）：https://git-scm.com/downloads
+3.       安装Visual Studio Code （Download for Mac）
+下载地址：https://code.visualstudio.com/
+
+
+
 https://projects.invisionapp.com/d/signup?redir=
 
 https://github.com/FFS-ADD
