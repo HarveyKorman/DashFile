@@ -10,6 +10,7 @@ DL: 仅保密间的同事可以在6/13日5:00PM之前，自行联系IT的同事�
     课程中的一些知识与课前练习有关，所以请大家务必完成课前练习。
 
 http://docs.devopshub.cn/docker-training-hols/v3/
+
 https://pan.baidu.com/s/1miHToZA
 
 3．课前完成下列软件的安装：
@@ -58,6 +59,16 @@ https://npm.taobao.org/
 
 http://ionicframework.com/docs/v2/api/components/item/Item/
 http://liuzhuang.tech/2016/11/24/Ionic2-Study-%E4%B8%89/
+
+
+先週の金曜日（６／１６）に
+Windows 10で証明書を導入する際に、下記のように設定したら、Azure VPNへアクセスできました。
+1.	証明書を現在のユーザーとローカルPCの両方で使うように導入する。
+※Windows 7では、証明書は現在のユーザーしか導入できないようです。
+      2.  証明書のセキュリティーラベルを「高」に設定する。
+
+	  
+	  
 
 
 
